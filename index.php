@@ -26,7 +26,7 @@
 	if ($_GET['section'] == "support") {
 		$body = file_get_contents('pages/support.html');
 	} elseif ($_GET['section'] == "involved") {
-	
+		$body = file_get_contents('pages/involved.html');	
 	} else {
 		$body = file_get_contents('pages/_index.html');
 	}
