@@ -15,9 +15,9 @@
 <div id="midcolumn">
 <?php
 	if ($_GET['section'] == "support") {
-		$html = file_get_contents('pages/support.html');
+		$html = file_get_contents('support.html');
 	} else {
-		$html = file_get_contents('pages/_index.html');
+		$html = file_get_contents('_index.html');
 	}
 	echo $html;
 ?>
