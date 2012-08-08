@@ -14,19 +14,10 @@
 
 <div id="midcolumn">
 <?php
-	echo "Search:<br/>";
 	if ($_GET['section'] == "support") {
-		echo "Support<br/>";
-		$html = file_get_contents('./support.html');
-		if ($html == false) {
-			echo "fail.<br/>";
-		}
+		$html = include('./support.html');
 	} else {
-		echo "main<br/>"
-		$html = file_get_contents('./_index.html');
-		if ($html == false) {
-			echo "fail.<br/>";
-		}
+		$html = include('./_index.html');
 	}
 	echo $html;
 ?>
