@@ -1,3 +1,7 @@
+<?php
+ 	require_once($_SERVER['DOCUMENT_ROOT'] . "./functions/templating.php");
+?>
+
 <div id="bigbuttons">
 	<h3>Primary Links</h3>
 	<ul>
@@ -15,9 +19,9 @@
 <div id="midcolumn">
 <?php
 	if ($_GET['section'] == "support") {
-		$html = include('./support.html');
+		$html = get_include_contents('./support.html');
 	} else {
-		$html = include('./_index.html');
+		$html = get_include_contents('./_index.html');
 	}
 	echo $html;
 ?>

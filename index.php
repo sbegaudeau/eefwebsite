@@ -10,20 +10,10 @@
  *    
  *******************************************************************************/
 
-
-	function get_include_contents($filename) {
-	    if (is_file($filename)) {
-	        ob_start();
-	        include $filename;
-	        return ob_get_clean();
-	    }
-	    return false;
-	}
-
-
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php");
  	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php");
+ 	require_once($_SERVER['DOCUMENT_ROOT'] . "./functions/templating.php");
  	$App 	= new App();
 	$Nav	= new Nav();
 	$Menu 	= new Menu();
