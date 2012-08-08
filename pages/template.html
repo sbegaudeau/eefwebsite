@@ -15,15 +15,15 @@
 <div id="midcolumn">
 <?php
 	if ($_GET['section'] == "support") {
-		$html = get_include_contents('./support.html');
+		$html = get_include_contents('support.html');
 	if ($html == false) {
-		$html = "Error! Couldn't load file ./support.html";
+		$html = "Error! Couldn't load file support.html";
 	}
 	} else {
-		$html = get_include_contents('./_index.html');
+		$html = get_include_contents('_index.html');
 	}
 	if ($html == false) {
-		$html = "Error! Couldn't load file ./_index.html";
+		$html = "Error! Couldn't load file _index.html";
 	}
 	echo $html;
 ?>
