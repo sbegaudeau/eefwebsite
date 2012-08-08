@@ -16,8 +16,14 @@
 <?php
 	if ($_GET['section'] == "support") {
 		$html = get_include_contents('./support.html');
+	if ($html == false) {
+		$html = "Error! Couldn't load file ./support.html";
+	}
 	} else {
 		$html = get_include_contents('./_index.html');
+	}
+	if ($html == false) {
+		$html = "Error! Couldn't load file ./_index.html";
 	}
 	echo $html;
 ?>

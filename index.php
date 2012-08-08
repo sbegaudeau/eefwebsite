@@ -24,9 +24,12 @@
 	
 	// 	# Paste your HTML content between the EOHTML markers!
 	$html = get_include_contents('pages/template.html');
+	if ($html == false) {
+		$html = "Error! Couldn't load file pages/template.html";
+	}
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
 
 ?>
-Test
+Reload
