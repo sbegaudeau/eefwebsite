@@ -21,11 +21,7 @@
 	$localVersion = false;
 	
 	// 	# Paste your HTML content between the EOHTML markers!
-	if ($_GET['section'] == "support") {
-		$html = file_get_contents('pages/_support.html');
-	} else {
-		$html = file_get_contents('pages/_index.html');
-	}
+	$html = file_get_contents('pages/template.html');
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
