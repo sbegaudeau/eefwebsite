@@ -25,6 +25,8 @@
 	$banner = file_get_contents('pages/banner.html');
 	if ($_GET['section'] == "support") {
 		$body = file_get_contents('pages/support.html');
+	} elseif ($_GET['section'] == "involved") {
+	
 	} else {
 		$body = file_get_contents('pages/_index.html');
 	}
@@ -34,4 +36,3 @@
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
 
 ?>
-Path this time
