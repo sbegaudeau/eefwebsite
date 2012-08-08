@@ -17,7 +17,7 @@
  	$App 	= new App();
 	$Nav	= new Nav();
 	$Menu 	= new Menu();
-	
+
 	include($App->getProjectCommon());	
 	$localVersion = false;
 	
