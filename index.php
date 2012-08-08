@@ -13,7 +13,6 @@
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php");
  	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php");
- 	require_once("./functions/templating.php");
 
 	$App 	= new App();
 	$Nav	= new Nav();
@@ -23,11 +22,14 @@
 	$localVersion = false;
 	
 	// 	# Paste your HTML content between the EOHTML markers!
-	$html = get_include_contents('pages/template.html');
-	if ($html == false) {
-		$html = "Error! Couldn't load file pages/template.html";
+	$banner = file_get_contents('pages/banner.html');
+	if ($_GET['section'] == "support") {
+		$body = file_get_contents('pages/support.html');
+	} else {
+		$body = file_get_contents('pages/_index.html');
 	}
-
+	$right = file_get_contents('pages/rightcolumn.html');
+	$html = $banner + $body + $right;
 	# Generate the web page
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
 
