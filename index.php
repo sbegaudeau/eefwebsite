@@ -29,7 +29,7 @@
 		$body = file_get_contents('pages/_index.html');
 	}
 	$right = file_get_contents('pages/rightcolumn.html');
-	$html = $banner + $body + $right;
+	$html = $banner . $body . $right;
 	# Generate the web page
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
 
