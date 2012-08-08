@@ -13,11 +13,14 @@
 </div>
 
 <div id="midcolumn">
+<?php
 	if ($_GET['section'] == "support") {
 		$html = file_get_contents('pages/_support.html');
 	} else {
 		$html = file_get_contents('pages/template.html');
 	}
+	echo $html;
+?>
 </div>
 
 <div id="rightcolumn">
