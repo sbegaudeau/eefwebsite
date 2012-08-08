@@ -10,6 +10,17 @@
  *    
  *******************************************************************************/
 
+
+	function get_include_contents($filename) {
+	    if (is_file($filename)) {
+	        ob_start();
+	        include $filename;
+	        return ob_get_clean();
+	    }
+	    return false;
+	}
+
+
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/app.class.php");
 	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/nav.class.php");
  	require_once($_SERVER['DOCUMENT_ROOT'] . "/eclipse.org-common/system/menu.class.php");
@@ -21,7 +32,7 @@
 	$localVersion = false;
 	
 	// 	# Paste your HTML content between the EOHTML markers!
-	$html = include('pages/template.html');
+	$html = get_include_contents('pages/template.html');
 
 	# Generate the web page
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
