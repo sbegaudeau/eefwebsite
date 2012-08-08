@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule	  ^(.*)    http://www.eclipse.org/modeling/emft/?project=eef [R,L]
