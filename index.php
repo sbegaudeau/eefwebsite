@@ -27,3 +27,5 @@
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
 
 ?>
+
+Value: <?= $section ?>
