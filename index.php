@@ -28,4 +28,4 @@
 
 ?>
 
-Value: <?= $section ?>
+Value: <?= $_GET['section'] ?>
