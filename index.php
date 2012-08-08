@@ -32,4 +32,4 @@
 	$App->generatePage($theme, $Menu, null, $pageAuthor, $pageKeywords, $pageTitle, $html);
 
 ?>
-Next step again
+Path this time
