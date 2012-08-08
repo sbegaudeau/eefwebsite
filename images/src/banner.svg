@@ -16,7 +16,7 @@
    version="1.1"
    inkscape:version="0.48.1 r9760"
    sodipodi:docname="banner.svg"
-   inkscape:export-filename="/home/glefur/Bureau/banner-logo.png"
+   inkscape:export-filename="/home/glefur/Pro/workspaces/EEF/Stream20/workspace-dev/eef/images/backgroundMain.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -213,6 +213,14 @@
        y1="3.6221476"
        x2="528.57141"
        y2="180.85715" />
+    <filter
+       inkscape:collect="always"
+       id="filter3846">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.68734242"
+         id="feGaussianBlur3848" />
+    </filter>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -221,9 +229,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="602.19029"
-     inkscape:cy="20.826784"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="698.60245"
+     inkscape:cy="87.272024"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -252,7 +260,7 @@
      id="layer1"
      transform="translate(0,-859.36218)">
     <g
-       id="g5164">
+       id="g3850">
       <g
          transform="translate(78.034284,263.64982)"
          id="g4738">
@@ -291,54 +299,50 @@
          id="image4755"
          x="37.285748"
          y="870.83099" />
-      <g
-         transform="translate(-16.428571,-178.8726)"
-         id="g5154">
-        <text
-           xml:space="preserve"
-           style="font-size:37.44818497px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#2d1650;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-           x="240.71429"
-           y="1101.9563"
-           id="text5106"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan5108"
-             x="240.71429"
-             y="1101.9563"
-             style="font-weight:bold;fill:#2d1650;fill-opacity:1;-inkscape-font-specification:Sans Bold">extended</tspan><tspan
-             sodipodi:role="line"
-             x="240.71429"
-             y="1148.7665"
-             id="tspan5112"
-             style="font-weight:bold;fill:#2d1650;fill-opacity:1;-inkscape-font-specification:Sans Bold">  editing</tspan><tspan
-             sodipodi:role="line"
-             x="240.71429"
-             y="1195.5768"
-             id="tspan5110"
-             style="font-weight:bold;fill:#2d1650;fill-opacity:1;-inkscape-font-specification:Sans Bold">    framework</tspan></text>
-        <text
-           xml:space="preserve"
-           style="font-size:37.44818497px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-           x="241.59328"
-           y="1100.9413"
-           id="text5106-5"
-           sodipodi:linespacing="125%"><tspan
-             sodipodi:role="line"
-             id="tspan5108-0"
-             x="241.59328"
-             y="1100.9413"
-             style="font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Sans Bold">e</tspan><tspan
-             sodipodi:role="line"
-             x="241.59328"
-             y="1147.7515"
-             id="tspan5112-6"
-             style="font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Sans Bold">  e</tspan><tspan
-             sodipodi:role="line"
-             x="241.59328"
-             y="1194.5618"
-             id="tspan5110-9"
-             style="font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Sans Bold">    f</tspan></text>
-      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text5106"
+         y="923.08368"
+         x="220.28572"
+         style="font-size:37.44818497px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#2d1650;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold;fill:#2d1650;fill-opacity:1;-inkscape-font-specification:Sans Bold"
+           y="923.08368"
+           x="220.28572"
+           id="tspan5108"
+           sodipodi:role="line">extended</tspan><tspan
+           style="font-weight:bold;fill:#2d1650;fill-opacity:1;-inkscape-font-specification:Sans Bold"
+           id="tspan5112"
+           y="969.89392"
+           x="220.28572"
+           sodipodi:role="line">editing</tspan><tspan
+           style="font-weight:bold;fill:#2d1650;fill-opacity:1;-inkscape-font-specification:Sans Bold"
+           id="tspan5110"
+           y="1016.7042"
+           x="220.28572"
+           sodipodi:role="line">framework</tspan></text>
+      <text
+         sodipodi:linespacing="125%"
+         id="text5106-7"
+         y="923.53058"
+         x="220.7571"
+         style="font-size:37.44818497px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;opacity:0.95890407;fill:#ffffff;fill-opacity:1;stroke:none;filter:url(#filter3846);font-family:Sans;-inkscape-font-specification:Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Sans Bold"
+           y="923.53058"
+           x="220.7571"
+           id="tspan5108-5"
+           sodipodi:role="line">e</tspan><tspan
+           style="font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Sans Bold"
+           id="tspan5112-2"
+           y="970.34082"
+           x="220.7571"
+           sodipodi:role="line">e</tspan><tspan
+           style="font-weight:bold;fill:#ffffff;fill-opacity:1;-inkscape-font-specification:Sans Bold"
+           id="tspan5110-2"
+           y="1017.1511"
+           x="220.7571"
+           sodipodi:role="line">f</tspan></text>
     </g>
   </g>
 </svg>
