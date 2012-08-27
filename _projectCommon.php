@@ -26,7 +26,7 @@
 	
 	# Break the navigation into sections
 	$Nav->addNavSeparator("eef", 	"/eef");
-	$Nav->addCustomNav("Download", "/eef/downloads", "_self", 3);
+	$Nav->addCustomNav("Download", "/eef/pages/downloads", "_self", 3);
 	$Nav->addCustomNav("Documentation", "http://wiki.eclipse.org/EEF", "_blank", 3);
 	$Nav->addCustomNav("Support", "/eef/index.php?section=support", "_blank", 3);
 	$Nav->addCustomNav("Getting Involved", "#", "_blank", 3);
