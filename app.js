@@ -36,10 +36,15 @@ angular.module(moduleName).controller('MainController', [
     var main = this;
     $scope.$on('$locationChangeSuccess', function () {
       var path = $location.path();
-      if ($mdMedia('xs') || $mdMedia('sm') || $mdMedia('md')) {
-        main.pageName = 'EEF ' + pageNameMap[path];
+      var pageName = pageNameMap[path];
+      if (pageName != undefined && ($mdMedia('xs') || $mdMedia('sm') || $mdMedia('md'))) {
+        main.pageName = 'EEF ' + pageName;
+      } else if (pageName === undefined && path.indexOf('/documentation') != -1 && ($mdMedia('xs') || $mdMedia('sm') || $mdMedia('md'))) {
+        main.pageName = 'EEF Documentation'
+      } else if (path.indexOf('/documentation') != -1) {
+        main.pageName = 'Documentation'
       } else {
-        main.pageName = pageNameMap[path];
+        main.pageName = pageName;
       }
 
       $anchorScroll('top');
