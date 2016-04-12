@@ -70,7 +70,7 @@
   <div layout="column" flex>
     <md-toolbar>
       <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Toggle Menu" hide-gt-sm ng-click="main.toggle()">
+        <md-button class="md-icon-button" aria-label="Toggle Menu" hide-gt-md ng-click="main.toggle()">
           <md-icon md-svg-icon="assets/images/menu.svg"></md-icon>
         </md-button>
         <h2>
@@ -80,7 +80,7 @@
     </md-toolbar>
 
     <md-content md-scroll-y layout="column" flex>
-      <div ng-view layout-paddin flex="noshrink"></div>
+      <div ng-view autoscroll="true" layout-paddin flex="noshrink"  id="top"></div>
 
       <div class="footer" layout="row" flex="noshrink">
         <div layout="row" layout-xs="column" flex layout-align="space-around start">

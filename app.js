@@ -8,30 +8,43 @@ angular.module(moduleName, [
   'ngRoute',
 ]);
 
-angular.module(moduleName).controller('MainController', ['$scope', '$location', '$mdSidenav', function ($scope, $location, $mdSidenav) {
-  this.toggle = function () {
-    $mdSidenav('left').toggle();
-  };
+angular.module(moduleName).controller('MainController', [
+  '$scope',
+  '$location',
+  '$anchorScroll',
+  '$mdSidenav',
+  '$mdMedia',
+  function ($scope, $location, $anchorScroll, $mdSidenav, $mdMedia) {
+    this.toggle = function () {
+      $mdSidenav('left').toggle();
+    };
 
-  this.openMenu = function ($mdOpenMenu, event) {
-    $mdOpenMenu(event);
-  };
+    this.openMenu = function ($mdOpenMenu, event) {
+      $mdOpenMenu(event);
+    };
 
-  var pageNameMap = {
-    '/': '',
-    '/contribute': 'Contribute',
-    '/documentation': 'Documentation',
-    '/download': 'Download',
-    '/gallery': 'Gallery',
-    '/overview': 'Overview',
-    '/support': 'Support'
-  };
-  this.pageName = '';
-  var main = this;
-  $scope.$on('$locationChangeSuccess', function () {
-    var path = $location.path();
-    main.pageName = pageNameMap[path];
-  });
+    var pageNameMap = {
+      '/': '',
+      '/contribute': 'Contribute',
+      '/documentation': 'Documentation',
+      '/download': 'Download',
+      '/gallery': 'Gallery',
+      '/overview': 'Overview',
+      '/support': 'Support'
+    };
+    this.pageName = '';
+    var main = this;
+    $scope.$on('$locationChangeSuccess', function () {
+      var path = $location.path();
+      if ($mdMedia('xs') || $mdMedia('sm') || $mdMedia('md')) {
+        main.pageName = 'EEF ' + pageNameMap[path];
+      } else {
+        main.pageName = pageNameMap[path];
+      }
+
+      $anchorScroll('top');
+    }
+  );
 }]);
 
 angular.module(moduleName).config(['$mdThemingProvider', '$routeProvider', '$locationProvider', function ($mdThemingProvider, $routeProvider, $locationProvider) {
