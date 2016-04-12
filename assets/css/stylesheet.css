@@ -196,6 +196,10 @@ a.docs-logo {
   text-align: justify;
 }
 
+.content li {
+  line-height: 25px;
+}
+
 .gallery .layout-row {
   padding-top: 30px;
   padding-left: 25px;
@@ -226,8 +230,7 @@ a.docs-logo {
 
 .footer {
   border-top: 1px solid #3949AB;
-  background-color: #3949AB;
-  color: white;
+  color: #3949AB;
   margin-top: 30px;
   padding-top: 30px;
   padding-left: 25px;
@@ -236,7 +239,7 @@ a.docs-logo {
 }
 
 .footer a {
-  color: white;
+  color: #3949AB;
   text-decoration: none;
 }
 .footer a:hover {
