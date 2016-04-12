@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <title>EEF</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+
+  <!-- Angular Material style sheet -->
+  <link rel="stylesheet" href="thirdparty/angular-material/angular-material.min.css">
+  <link rel="stylesheet" href="assets/css/stylesheet.css">
+</head>
+<body ng-app="eef" layout="row" ng-cloak ng-controller="MainController as main">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+    <header class="nav-header">
+      <a class="docs-logo" href="#/" ng-click="main.toggle()">
+        <h1 class="docs-logotype md-heading">Eclipse EEF</h1>
+      </a>
+    </header>
+    <md-content flex role="navigation">
+      <ul class="docs-menu">
+        <li>
+          <menu-link section="section">
+            <a class="md-button md-ink-ripple" href="#/" ng-click="main.toggle()">
+              <span>Homepage</span>
+            </a>
+          </menu-link>
+        </li>
+        <li>
+          <menu-link section="section">
+            <a class="md-button md-ink-ripple" href="#/overview" ng-click="main.toggle()">
+              <span>Overview</span>
+            </a>
+          </menu-link>
+          <menu-link section="section">
+            <a class="md-button md-ink-ripple" href="#/gallery" ng-click="main.toggle()">
+              <span>Gallery</span>
+            </a>
+          </menu-link>
+          <menu-link section="section">
+            <a class="md-button md-ink-ripple" href="#/documentation" ng-click="main.toggle()">
+              <span>Documentation</span>
+            </a>
+          </menu-link>
+          <menu-link section="section">
+            <a class="md-button md-ink-ripple" href="#/contribute" ng-click="main.toggle()">
+              <span>Contribute</span>
+            </a>
+          </menu-link>
+          <menu-link section="section">
+            <a class="md-button md-ink-ripple" href="#/support" ng-click="main.toggle()">
+              <span>Support</span>
+            </a>
+          </menu-link>
+          <menu-link section="section">
+            <a class="md-button md-ink-ripple" href="#/download" ng-click="main.toggle()">
+              <span>Download</span>
+            </a>
+          </menu-link>
+        </li>
+      </ul>
+    </md-content>
+  </md-sidenav>
+
+  <div layout="column" flex>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Toggle Menu" hide-gt-sm ng-click="main.toggle()">
+          <md-icon md-svg-icon="assets/images/menu.svg"></md-icon>
+        </md-button>
+        <h2>
+          <span>{{main.pageName}}</span>
+        </h2>
+      </div>
+    </md-toolbar>
+
+    <md-content md-scroll-y layout="column" flex>
+      <div ng-view layout-paddin flex="noshrink"></div>
+
+      <div class="footer" layout="row" flex="noshrink">
+        <div layout="row" layout-xs="column" flex layout-align="space-around start">
+          <div>
+            <h3>EEF</h3>
+            <ul>
+              <li>Forum</li>
+              <li><a href="https://www.obeo.fr/en/services/support-maintenance">Professional Support</a></li>
+              <li>Bug Tracker</li>
+              <li><a href="https://wiki.eclipse.org/EEF">Wiki</a></li>
+              <li>Developer Mailing List</li>
+              <li><a href="https://git.eclipse.org/c/eef/org.eclipse.eef.git/">Source Code</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Related Tools</h3>
+            <ul>
+              <li><a href="https://www.eclipse.org/sirius">Sirius</a></li>
+              <li><a href="https://www.eclipse.org/acceleo">Acceleo</a></li>
+              <li><a href="https://www.eclipse.org/emf">EMF</a></li>
+              <li><a href="https://www.eclipse.org/emf/compare">EMF Compare</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Eclipse</h3>
+            <ul>
+              <li><a href="https://eclipse.org/">Eclipse</a></li>
+              <li><a href="https://www.eclipse.org/legal/privacy.php">Privacy Policy</a></li>
+              <li><a href="https://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
+              <li><a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
+              <li><a href="https://www.eclipse.org/legal/">Legal</a></li>
+              <li><a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </md-content>
+
+
+  </div>
+
+  <!-- Angular Material requires Angular.js Libraries -->
+  <script src="thirdparty/angular/angular.min.js"></script>
+  <script src="thirdparty/angular-animate/angular-animate.min.js"></script>
+  <script src="thirdparty/angular-aria/angular-aria.min.js"></script>
+  <script src="thirdparty/angular-messages/angular-messages.min.js"></script>
+  <script src="thirdparty/angular-route/angular-route.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="thirdparty/angular-material/angular-material.min.js"></script>
+
+  <!-- Your application bootstrap  -->
+  <script src="app.js"></script>
+
+</body>
+</html>

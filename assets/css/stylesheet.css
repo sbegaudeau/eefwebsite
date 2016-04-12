@@ -1,0 +1,247 @@
+h1 {
+  font-size: 3.400rem;
+  font-weight: 400;
+  line-height: 4rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #106CC8;
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(64, 84, 178, 0.25);
+  -webkit-transition: border-bottom 0.35s;
+  -moz-transition: border-bottom 0.35s;
+  -ms-transition: border-bottom 0.35s;
+  -o-transition: border-bottom 0.35s;
+  transition: border-bottom 0.35s;
+}
+
+ul li:first-child {
+  margin-top: 0;
+}
+
+.site-sidenav {
+  width: 272px;
+  min-width: 272px;
+  max-width: 272px;
+  background: #303F9F;
+}
+
+.site-sidenav md-content {
+  background: transparent;
+}
+
+.site-sidenav .nav-header {
+  background-color: #303F9F;
+  background: linear-gradient(#283593, #303F9F);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #283593), color-stop(1, #303F9F));
+  background: -webkit-linear-gradient(top, #283593 0%, #303F9F 100%);
+  background: -moz-linear-gradient(top, #283593 0%, #303F9F 100%);
+  background: linear-gradient(top, #283593 0%, #303F9F 100%);
+  border-bottom: 1px solid #7986CB;
+  flex-shrink: 0;
+  z-index: 2;
+}
+
+a.docs-logo {
+  border-bottom: none;
+}
+.docs-logo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 0 16px;
+  margin: 0 auto;
+}
+
+.docs-logo > img {
+  height: 150px;
+  width: auto;
+  display: block;
+  transform-origin: 50% 0;
+  transform: scale(1.2);
+}
+
+.docs-logotype {
+  color: white;
+  text-align: center;
+  font-weight: 400;
+  font-size: 26px;
+}
+
+.docs-menu, .docs-menu ul {
+    list-style: none;
+    padding: 0;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.docs-menu > li:nth-child(1) {
+  border-top: none;
+}
+
+.docs-menu > li {
+    border-bottom: 1px solid #7986CB;
+}
+
+.site-sidenav .md-button {
+    border-radius: 0;
+    color: white;
+    cursor: pointer;
+    display: block;
+    align-items: inherit;
+    line-height: 40px;
+    margin: 0;
+    max-height: 40px;
+    overflow: hidden;
+    padding: 0px 16px;
+    text-align: left;
+    text-decoration: none;
+    white-space: normal;
+    width: 100%;
+}
+
+.hint {
+  /* Position the hint */
+  position: absolute;
+  left: 2px;
+  right: auto;
+  bottom: 7px;
+  /* Copy styles from ng-messages */
+  font-size: 12px;
+  line-height: 14px;
+  transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
+  /* Set our own color */
+  color: grey;
+}
+.hint.ng-hide,
+.hint.ng-enter,
+.hint.ng-leave.ng-leave-active {
+  bottom: 26px;
+  opacity: 0;
+}
+
+.hint.ng-leave,
+.hint.ng-enter.ng-enter-active {
+  bottom: 7px;
+  opacity: 1;
+}
+
+.hero {
+  padding: 60px 40px 40px;
+}
+.hero h1 {
+  text-align: center;
+}
+.hero p {
+  text-align: center;
+}
+
+.hero .title {
+    color: #303F9F;
+}
+
+.hero .catchphrase {
+  color: #303F9F;
+}
+
+.news {
+  padding: 10px 50px 10px;
+  border-top: 1px solid #3949AB;
+  border-bottom: 1px solid #3949AB;
+  color: #3949AB;
+}
+.news p {
+  text-align: center;
+}
+
+.presentation {
+  text-align: center;
+  padding-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 20px;
+}
+.presentation p {
+  text-align: justify;
+}
+
+.sponsors {
+  padding-bottom: 30px;
+}
+.sponsors .image_link {
+  text-decoration: none;
+  border-bottom: 0px;
+}
+
+.content {
+  padding-top: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+
+.content p {
+  text-align: justify;
+}
+
+.gallery .layout-row {
+  padding-top: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.gallery md-card {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.documentation-list {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.checklist {
+  border-collapse: collapse;
+}
+.checklist thead {
+  font-weight: bold;
+}
+.checklist td, th {
+  border: 1px solid #999;
+  padding: 0.5rem 0.7rem 0.5rem;
+  text-align: left;
+}
+
+.footer {
+  border-top: 1px solid #3949AB;
+  background-color: #3949AB;
+  color: white;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 30px;
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer li {
+  list-style-type: none;
+}
