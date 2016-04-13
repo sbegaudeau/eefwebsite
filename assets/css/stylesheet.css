@@ -149,7 +149,8 @@ a.docs-logo {
 }
 
 .hero .title {
-    color: #303F9F;
+  color: #303F9F;
+  font-weight: 800;
 }
 
 .hero .catchphrase {
@@ -160,10 +161,35 @@ a.docs-logo {
   padding: 10px 50px 10px;
   border-top: 1px solid #3949AB;
   border-bottom: 1px solid #3949AB;
-  color: #3949AB;
+  color: white;
+  background-color: #7986CB;
+  margin-bottom: 30px;
 }
 .news p {
   text-align: center;
+}
+.news a {
+  color: #FFD54F;
+}
+
+.details {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.eef-sirius {
+  font-size: 50px;
+}
+.eef {
+  color: #303F9F;
+}
+.sirius {
+  color: #261e58;
+}
+.plus {
+  color: #FF6F00;
 }
 
 .presentation {
