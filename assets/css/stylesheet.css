@@ -172,14 +172,29 @@ a.docs-logo {
   color: #FFD54F;
 }
 
-.details {
+.introduction {
   padding-left: 30px;
   padding-right: 30px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
+.introduction h2 {
+  text-align: center;
+}
+.introduction p {
+  text-align: justify;
+}
 
 .eef-sirius {
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.eef-sirius p {
+  text-align: justify;
+}
+.eef-sirius-message {
   font-size: 50px;
 }
 .eef {
