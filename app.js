@@ -15,6 +15,8 @@ angular.module(moduleName).controller('MainController', [
   '$mdSidenav',
   '$mdMedia',
   function ($scope, $location, $anchorScroll, $mdSidenav, $mdMedia) {
+    this.mdMedia = $mdMedia;
+    
     this.toggle = function () {
       $mdSidenav('left').toggle();
     };

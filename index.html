@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="assets/css/stylesheet.css">
 </head>
 <body ng-app="eef" layout="row" ng-cloak ng-controller="MainController as main">
-  <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2 site-sidenav" md-component-id="left" md-is-locked-open="main.mdMedia('gt-md')">
     <header class="nav-header">
       <a class="docs-logo" href="#/" ng-click="main.toggle()">
         <h1 class="docs-logotype md-heading">Eclipse EEF</h1>
