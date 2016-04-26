@@ -67,7 +67,7 @@ angular.module(moduleName).config(['$mdThemingProvider', '$routeProvider', '$loc
       }
     }).when('/documentation/:version/:topic*', {
       templateUrl: function (params) {
-        return 'sections/documentation/' + params.version +'/' + params.topic + '/index.html';
+        return 'sections/documentation/' + params.version +'/' + params.topic + '.html';
       }
     }).when('/download', {
       templateUrl: 'sections/download/download.html'
@@ -77,8 +77,11 @@ angular.module(moduleName).config(['$mdThemingProvider', '$routeProvider', '$loc
       templateUrl: 'sections/overview/overview.html'
     }).when('/support', {
       templateUrl: 'sections/support/support.html'
+    }).otherwise({
+      redirectTo: '/'
     });
 
     //$locationProvider.html5Mode(true);
+    //$locationProvider.hashPrefix('!');
   }
 ]);

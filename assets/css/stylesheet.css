@@ -7,6 +7,7 @@ h1 {
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
   margin-top: 1rem;
+  color: #303F9F;
 }
 
 ul {
@@ -138,6 +139,31 @@ a.docs-logo {
   opacity: 1;
 }
 
+.label {
+  padding: 1px 3px 2px;
+  font-size: 9.75px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: #bfbfbf;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.label-danger {
+  background-color: #c43c35;
+}
+.label-warning {
+  background-color: #f89406;
+}
+.label-success {
+  background-color: #46a546;
+}
+.label-info {
+  background-color: #62cffc;
+}
+
 .hero {
   padding: 60px 40px 40px;
 }
@@ -175,24 +201,62 @@ a.docs-logo {
 .introduction {
   padding-left: 30px;
   padding-right: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .introduction h2 {
   text-align: center;
+  font-weight: 200;
 }
 .introduction p {
-  text-align: justify;
+  text-align: center;
+}
+
+.advantages {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.column-icon {
+  height: 70px;
+  width: 70px;
+}
+.declarative path:first-child {
+  fill: #5C6BC0;
+}
+.simple path:last-child {
+  fill: #5C6BC0;
+}
+.configurable path:last-child {
+  fill: #5C6BC0;
+}
+.documentation path:last-child {
+  fill: #5C6BC0;
+}
+.forum path:last-child {
+  fill: #5C6BC0;
+}
+.professional-support path:last-child {
+  fill: #5C6BC0;
+}
+.bug path:last-child {
+  fill: #5C6BC0;
+}
+.training path:last-child {
+  fill: #5C6BC0;
+}
+.custom path:last-child {
+  fill: #5C6BC0;
 }
 
 .eef-sirius {
   padding-left: 30px;
   padding-right: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 .eef-sirius p {
-  text-align: justify;
+  text-align: center;
 }
 .eef-sirius-message {
   font-size: 50px;
@@ -207,19 +271,33 @@ a.docs-logo {
   color: #FF6F00;
 }
 
-.presentation {
+.help {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.column {
   text-align: center;
   padding-top: 20px;
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 20px;
 }
-.presentation p {
-  text-align: justify;
+.column h2 {
+  text-align: center;
+  font-weight: 200;
+}
+.column p {
+  text-align: center;
 }
 
 .sponsors {
+  padding-top: 30px;
   padding-bottom: 30px;
+}
+.sponsors h2 {
+  text-align: center;
+  font-weight: 200;
 }
 .sponsors .image_link {
   text-decoration: none;
@@ -269,6 +347,15 @@ a.docs-logo {
   text-align: left;
 }
 
+md-toolbar h2 {
+  color: white;
+}
+
+.support-block {
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
 .footer {
   border-top: 1px solid #3949AB;
   color: #3949AB;
@@ -288,4 +375,8 @@ a.docs-logo {
 }
 .footer li {
   list-style-type: none;
+}
+.copyright {
+  padding-top: 20px;
+  font-size: 12px;
 }

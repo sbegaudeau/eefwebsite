@@ -3,10 +3,11 @@
 <head>
   <title>EEF</title>
 
+  <base href="/"/>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <meta name="description" content="">
+  <meta name="description" content="Eclipse EEF">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
   <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
@@ -82,17 +83,15 @@
     <md-content md-scroll-y layout="column" flex>
       <div ng-view autoscroll="true" layout-paddin flex="noshrink"  id="top"></div>
 
-      <div class="footer" layout="row" flex="noshrink">
+      <div class="footer" layout="column" flex="noshrink">
         <div layout="row" layout-xs="column" flex layout-align="space-around start">
           <div>
             <h3>EEF</h3>
             <ul>
-              <!--<li>Forum</li>-->
               <li><a href="https://www.obeo.fr/en/services/support-maintenance">Professional Support</a></li>
-              <!--<li>Bug Tracker</li>-->
               <li><a href="https://wiki.eclipse.org/EEF">Wiki</a></li>
-              <!--<li>Developer Mailing List</li>-->
               <li><a href="https://git.eclipse.org/c/eef/org.eclipse.eef.git/">Source Code</a></li>
+              <li><a href="https://git.eclipse.org/r/#/q/is:watched+is:open+project:eef/org.eclipse.eef">Code Review</a></li>
             </ul>
           </div>
           <div>
@@ -101,7 +100,6 @@
               <li><a href="https://www.eclipse.org/sirius">Sirius</a></li>
               <li><a href="https://www.eclipse.org/acceleo">Acceleo</a></li>
               <li><a href="https://www.eclipse.org/emf">EMF</a></li>
-              <li><a href="https://www.eclipse.org/emf/compare">EMF Compare</a></li>
             </ul>
           </div>
           <div>
@@ -112,9 +110,12 @@
               <li><a href="https://www.eclipse.org/legal/termsofuse.php">Terms of Use</a></li>
               <li><a href="https://www.eclipse.org/legal/copyright.php">Copyright Agent</a></li>
               <li><a href="https://www.eclipse.org/legal/">Legal</a></li>
-              <li><a href="https://www.eclipse.org/org/foundation/contact.php">Contact Us</a></li>
             </ul>
           </div>
+        </div>
+
+        <div class="copyright">
+          Copyright 2016 Eclipse Foundation. This document is made available under the terms of the <a href="http://www.eclipse.org/legal/epl­v10.html">Eclipse Public License v1.0</a>.
         </div>
       </div>
     </md-content>

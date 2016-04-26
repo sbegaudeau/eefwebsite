@@ -1,26 +1,75 @@
 <md-content layout="column" layout-align="center stretch" class="content">
   <h2>Can't wait to contribute?</h2>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Due to the fact that Eclipse Sirius has the most advanced integration of Eclipse EEF, most of the guidelines detailed here to contribute to Eclipse EEF are similar to those for Eclipse Sirius.
+  </p>
+  <p>
+    In order to get started, you will need to install Java 7. You can use Java 8 if you want but you need at least Java 7 to get started. If you plan on using Eclipse Neon (or more recent) to contribute to EEF, Java 8 will be required.
   </p>
 
   <h3>Configure your development environment</h3>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    You can then download Eclipse Luna SR2 (4.4.2) directly from the <a href="http://download.eclipse.org/eclipse/downloads/">download page of the Eclipse Platform</a>. In this freshly download version of Eclipse, you can install the following plugins:
+  </p>
+  <ul>
+    <li>
+      <a href="https://www.eclipse.org/mpc/">Marketplace Client</a>, available from the Luna update site. It will be used in order to download additional tools like EclEmma.
+    </li>
+    <li>
+      <a href="http://eclipse-cs.sourceforge.net/">Checkstyle</a>, available from the <a href="http://eclipse-cs.sf.net/update/">Eclipse CS update site</a>. It is used to enforce a set of specific rules to follow in the project.
+    </li>
+    <li>
+      <a href="http://eclemma.org">EclEmma</a>, available from the Eclipse Marketplace Client. It will be used in order to see the code coverage of the unit tests.
+    </li>
+    <li>
+      <a href="https://www.eclipse.org/egit">EGit</a>, available from the Eclipse Marketplace Client. It provides a great integration of Git inside of Eclipse.
+    </li>
+    <li>
+      <a href="https://github.com/mbarbero/fr.obeo.releng.targetplatform">Target Platform Definition DSL and Generator 2.0</a>, available from <a href="http://mbarbero.github.io/fr.obeo.releng.targetplatform/p2/latest/">its dedicated update site</a>. This tool is used to generate the target platform of the project. The target platform is the set of all the dependencies against which we want to compile the projet. The EEF development team uses multiple target platforms in order to ensure that the code compiles against all of our targets.
+    </li>
+  </ul>
+
+  <p>
+    The following development tools are strongly recommended in order to contribute efficiently to Eclipse EEF:
+  </p>
+  <ul>
+    <li><a href="https://git-scm.com">Git</a>, the source code management tool used by the development team.</li>
+    <li><a href="https://maven.apache.org">Maven</a>, the software management tool used to build the project.</li>
+  </ul>
+
+  <p>
+    You are of course free to use any additional tools you want to make your development experience more pleasant for you. However, do not commit anything which adds new requirements without getting approval from the development team.
   </p>
 
   <h3>Retrieve the source code</h3>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Once you have installed all those tools, you can retrieve the source code of the project. Just like any project of the Eclipse Foundation, the source code of Eclipse EEF is visible on its dedicated <a href="http://git.eclipse.org/c/eef/org.eclipse.eef.git">dashboard</a>. At the bottom of this page, you can find several URLs in order to clone the Git repository containing the source code of the project.
+  </p>
+  <p>
+    Clone the source code in a dedicated folder (not in the workspace of any of your Eclipse), then add the local Git repository to EGit (Git Repositories view). In the Git repository of EEF, there are two kinds of projects, those using the namespace "org.eclipse.emf.eef" and those using the namespace "org.eclipse.eef". All the projects using the namespace "org.eclipse.eef" are the projects used for the new version of the EEF runtime and unless you want to work on the legacy version of EEF, those are the online project that you will need to import and manipulate. To import the projects in your workspace, expand the EEF repository in the "Git Repositories" and right-click on "Working Directory". The EEF source code should now be visible in your workspace but it should fail to compile.
+  </p>
+
+  <h3>Set the target platform</h3>
+  <p>
+    Open the project named "org.eclipse.eef.releng" (not to be confused with org.eclipse.emf.eef.releng) and open one of the ".target" file. They are named after the version of Eclipse against which they will make your code compile. Once opened and resolved, set the target platform as the current target platform of your Eclipse. The source code should now compile in your workspace.
   </p>
 
   <h3>Try to build the project</h3>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Open a terminal in the root folder of the EEF repository that you have previsouly cloned. Now use maven with the following command line in order to build the project:
+  </p>
+  <ul>
+    <li>mvn clean verify -f releng/org.eclipse.eef.releng/pom.xml</li>
+  </ul>
+  <p>
+    The build should compile all the projects, run the unit tests and it should produce an update site that you can publish to install a new version of EEF.
   </p>
 
   <h3>Workflow for your first contribution</h3>
   <p>
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Now you can edit the source code of EEF and build it localy, it's time for you to start you first contribution. First start by introducing yourself on the mailing list of the project in order to have a first contact with the existing contributors and specify the kind of contribution that you would like to realize. If you don't know what you want to work on, just ask for something to do.
+  </p>
+  <p>
+    Once you know what you want to work on, find its issue in the Eclipse Bugzilla or create a new issue in the Eclipse Bugzilla. You can now start to work on your contribution to the source code of EEF. Do not forget to reference the identifier of the Bugzilla issue. In order to accept your contribution, you need to sign an <a href="https://eclipse.org/legal/CLA.php">Eclipse Contributor Agreement (CLA)</a> and you need to sign your commit with your username and email. Once you are done, you can submit a review to the development team thanks to our Gerrit server. You can always look for the reviews available for EEF on <a href="https://git.eclipse.org/r/#/q/status:open+project:eef/org.eclipse.eef">the Gerrit server</a>.
   </p>
 </md-content>
