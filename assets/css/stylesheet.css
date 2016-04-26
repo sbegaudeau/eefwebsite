@@ -164,6 +164,21 @@ a.docs-logo {
   background-color: #62cffc;
 }
 
+.content {
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+.content p {
+  text-align: justify;
+}
+
+.content li {
+  line-height: 25px;
+}
+
 .hero {
   padding: 60px 40px 40px;
 }
@@ -305,21 +320,6 @@ a.docs-logo {
 .sponsors .image_link {
   text-decoration: none;
   border-bottom: 0px;
-}
-
-.content {
-  padding-top: 20px;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 20px;
-}
-
-.content p {
-  text-align: justify;
-}
-
-.content li {
-  line-height: 25px;
 }
 
 .gallery .layout-row {
