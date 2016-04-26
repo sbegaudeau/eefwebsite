@@ -282,6 +282,7 @@ a.docs-logo {
   padding-left: 30px;
   padding-right: 30px;
   padding-bottom: 20px;
+  max-width: 30%;
 }
 .column h2 {
   text-align: center;
