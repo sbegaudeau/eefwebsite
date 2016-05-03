@@ -1,0 +1,217 @@
+<md-content layout="column" layout-align="center stretch" class="content">
+  <h2>Checklist</h2>
+  <p>
+    This checklist has been created to help during the release of Eclipse EEF. It will list all the tasks that need to be realised for a proper release.
+  </p>
+
+
+<!--
+To modify the state of the checklist, use on the following block:
+<td class="ko">KO</td>
+<td class="na">N/A</td>
+<td class="ok">OK</td>
+-->
+
+  <h3>EEF 1.6.0</h3>
+  <table>
+    <thead>
+      <td>Task</td>
+      <td>SBE 2016/04/27</td>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="2">
+          Release Engineering
+        </td>
+      </tr>
+      <tr>
+        <td>Fix all the issues from the <a href="https://hudson.eclipse.org/simrel/job/simrel.neon.runaggregator.BUILD__CLEAN/lastSuccessfulBuild/artifact/aggregation/final/buildInfo/reporeports/index.html">aggregation build report</a></td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Create and submit the release review document</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Prepare the metadata of the next release (milestones, basic project plan)</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Tag the Git repository</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Branch the Git repository</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Create a maintenance job for the release on hudson</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Add the update site to the b3 aggregated release update site</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Update the issues of the bugzilla (change the fixed version, close the fixed ones)</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Installation
+        </td>
+      </tr>
+      <tr>
+        <td>Test the download of the zip files from the download page</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation from the Eclipse Marketplace</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation from the release train update site</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation using the update site of the release</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation on the latest release of UML Designer</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation on Eclipse Luna</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation on Eclipse Mars</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation on Eclipse Neon</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the installation on the latest Eclipse Modeling Package</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Branding
+        </td>
+      </tr>
+      <tr>
+        <td>Check the copyright, general information and license agreement for all features</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Check the plug-in name, version, legal info and provider for all plugins</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Check the plug-in name, version and provider for all plugins</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Tests
+        </td>
+      </tr>
+      <tr>
+        <td>Run all unit tests</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Run all RCPTT tests</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Run the Sirius / EFF tutorial on the latest Eclipse release</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the edition of a model using a text widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the edition of a model using a checkbox widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the edition of a model using a select widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the edition of a model using a radio widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the edition of a model using a reference widget (single and multiple)</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the edition of a model using an action on a reference widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the edition of a model using a button widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the display of a hyperlink widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the display of a label widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the validation on a page</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the validation on a group</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the validation on a widget</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Test the validation with a quick fix</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          Marketing
+        </td>
+      </tr>
+      <tr>
+        <td>Update the homepage of the website to announce the new release</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Update the documentation page of the website</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Update the download page of the website</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Update the screenshots of the gallery</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Announce the release on the developer mailing list</td>
+        <td class="ko">KO</td>
+      </tr>
+      <tr>
+        <td>Announce the release on the relevant social networks</td>
+        <td class="ko">KO</td>
+      </tr>
+    </tbody>
+  </table>
+</md-content>

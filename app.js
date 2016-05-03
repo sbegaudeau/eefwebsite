@@ -16,7 +16,7 @@ angular.module(moduleName).controller('MainController', [
   '$mdMedia',
   function ($scope, $location, $anchorScroll, $mdSidenav, $mdMedia) {
     this.mdMedia = $mdMedia;
-    
+
     this.toggle = function () {
       $mdSidenav('left').toggle();
     };
@@ -28,6 +28,7 @@ angular.module(moduleName).controller('MainController', [
     var pageNameMap = {
       '/': '',
       '/contribute': 'Contribute',
+      '/contribute/checklist': 'Checklist',
       '/documentation': 'Documentation',
       '/download': 'Download',
       '/gallery': 'Gallery',
@@ -61,6 +62,8 @@ angular.module(moduleName).config(['$mdThemingProvider', '$routeProvider', '$loc
       templateUrl: 'sections/homepage/homepage.html'
     }).when('/contribute', {
       templateUrl: 'sections/contribute/contribute.html'
+    }).when('/contribute/checklist', {
+      templateUrl: 'sections/contribute/checklist/checklist.html'
     }).when('/documentation', {
       templateUrl: 'sections/documentation/documentation.html'
     }).when('/documentation/:version', {
@@ -82,8 +85,5 @@ angular.module(moduleName).config(['$mdThemingProvider', '$routeProvider', '$loc
     }).otherwise({
       redirectTo: '/'
     });
-
-    //$locationProvider.html5Mode(true);
-    //$locationProvider.hashPrefix('!');
   }
 ]);

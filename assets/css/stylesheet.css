@@ -10,11 +10,6 @@ h1, h2, h3, h4, h5, h6 {
   color: #303F9F;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
-
 a {
   color: #106CC8;
   text-decoration: none;
@@ -30,6 +25,43 @@ a {
 ul li:first-child {
   margin-top: 0;
 }
+
+table {
+  border-collapse: collapse;
+}
+
+td, th {
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+thead {
+  font-weight: bolder;
+  color: white;
+  background-color: rgb(57,73,171);
+}
+
+td[colspan] {
+  font-weight: bold;
+  background-color: #C5CAE9;
+}
+td.ko {
+  background-color: #FFCDD2;
+  font-weight: bold;
+  text-align: center;
+}
+td.ok {
+  background-color: #B2DFDB;
+  font-weight: bold;
+  text-align: center;
+}
+td.na {
+  background-color: #E0E0E0;
+  font-weight: bold;
+  text-align: center;
+}
+
 
 .site-sidenav {
   width: 272px;
@@ -232,10 +264,6 @@ a.docs-logo {
   padding-bottom: 30px;
 }
 
-.column-icon {
-  height: 70px;
-  width: 70px;
-}
 .declarative path:first-child {
   fill: #5C6BC0;
 }
@@ -308,6 +336,10 @@ a.docs-logo {
 .column p {
   text-align: center;
 }
+.column-icon {
+  height: 70px;
+  width: 70px;
+}
 
 .sponsors {
   padding-top: 30px;
@@ -368,7 +400,9 @@ md-toolbar h2 {
   padding-right: 25px;
   padding-bottom: 30px;
 }
-
+.footer h3 {
+  text-align: center;
+}
 .footer a {
   color: #3949AB;
   text-decoration: none;
