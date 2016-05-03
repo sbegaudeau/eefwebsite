@@ -400,9 +400,6 @@ md-toolbar h2 {
   padding-right: 25px;
   padding-bottom: 30px;
 }
-.footer h3 {
-  text-align: center;
-}
 .footer a {
   color: #3949AB;
   text-decoration: none;
@@ -412,6 +409,10 @@ md-toolbar h2 {
 }
 .footer li {
   list-style-type: none;
+  padding-left: 0px;
+}
+.footer ul {
+  padding-left: 0px;
 }
 .copyright {
   padding-top: 20px;
