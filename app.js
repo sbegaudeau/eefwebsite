@@ -14,7 +14,8 @@ angular.module(moduleName).controller('MainController', [
   '$anchorScroll',
   '$mdSidenav',
   '$mdMedia',
-  function ($scope, $location, $anchorScroll, $mdSidenav, $mdMedia) {
+  '$window',
+  function ($scope, $location, $anchorScroll, $mdSidenav, $mdMedia, $window) {
     this.mdMedia = $mdMedia;
 
     this.toggle = function () {
@@ -24,6 +25,10 @@ angular.module(moduleName).controller('MainController', [
     this.openMenu = function ($mdOpenMenu, event) {
       $mdOpenMenu(event);
     };
+
+    angular.element($window).bind('scroll', function() {
+      $anchorScroll('top');
+    });
 
     var pageNameMap = {
       '/': '',
