@@ -1,0 +1,172 @@
+<md-content layout="column" layout-align="center stretch" class="content">
+  <ul class="breadcrumb">
+    <li><a href="#/documentation/1.6.0">1.6.0</a> <span class="divider">/</span></li>
+    <li><a href="#/documentation/1.6.0/developerguide/overview">Developer Guide</a></li>
+  </ul>
+		<h2 id="ExtensionPoints">Extension Points</h2>
+		<h3 id="eeflifecyclemanagerprovider">IEEFLifecycleManagerProvider</h3>
+		<p>This extension point can be used in order to replace the original appearance and behavior of any existing widget or to provide the appearance and behavior of a custom widget description.</p>
+		<pre><code>&lt;extension
+      point="org.eclipse.eef.ide.ui.eefLifecycleManagerProvider"&gt;
+   &lt;descriptor
+         class="org.eclipse.eef.sample.internal.extensions.SampleLifecycleManagerProvider"
+         description="Provides EEF Lifecycle Managers"
+         id="org.eclipse.eef.sample.eefLifecycleManagerProvider"
+         label="EEF Sample Lifecycle Manager Provider"&gt;
+   &lt;/descriptor&gt;
+&lt;/extension&gt;
+</code></pre>
+		<p>Example of IEEFLifecycleManagerProvider contribution. In this example, we are providing a contribution to provider an IEEFLifecycleManager for a custom widget description. Once EEF has retrieved the description of the user interface to create, it will navigate in this description in order to build the necessary widgets and containers. For each description of containers or widgets found, it will ask the IEEFLifecycleManagerProviders registered if they can handle the description. The first lifecycle manager provider which can handle the given description will thus be used to create the lifecycle manager for this description using the whole available context. The lifecycle manager returned will have the following responsibilities:</p>
+		<ul>
+			<li>Creation of the SWT widgets for the description &#8211; IEEFLifecycleManager#createControls(...)</li>
+			<li>Registration of the listeners between the widgets &#8211; IEEFLifecycleManager#aboutToBeShown(...)</li>
+			<li>Refresh of the widgets &#8211; IEEFLifecycleManager#refresh(...)</li>
+			<li>Unregistration of the listeners &#8211; IEEFLifecycleManager#aboutToBeDisposed(...)</li>
+			<li>Removal of all additional resources &#8211; IEEFLifecycleManager#dispose(...)</li>
+		</ul>
+		<p>In order to perform those duties, the architecture of EEF encourages the creator of an IEEFLifecycleManager to separate the user interface-related behavior from the business behavior by using a controller to handle the business part. The controller should implement 
+			<code>org.eclipse.eef.core.api.controllers.IEEFController</code> in order to perform basic task in a similar fashion as other controllers. There are several abstract classes available in order to build a new controller quite easily:
+		</p>
+		<ul>
+			<li>
+				<code>org.eclipse.eef.core.api.controllers.AbstractEEFController</code>
+			</li>
+			<li>
+				<code>org.eclipse.eef.core.api.controllers.AbstractEEFWidgetController</code>
+			</li>
+			<li>
+				<code>org.eclipse.eef.core.api.controllers.AbstractEEFCustomWidgetController</code>
+			</li>
+		</ul>
+		<p>The AbstractEEFController provides support for the validation and the refresh. The AbstractEEFWidgetController, which extends the AbstractEEFController, adds support for the refresh of the label and the help of the widgets and finally the AbstractEEFCustomWidgetController, which extends the AbstractEEFWidgetController, adds on top of that utility methods for the execution of command expressions.</p>
+		<pre><code>package org.eclipse.eef.sample.internal.extensions;
+
+import org.eclipse.eef.EEFControlDescription;
+import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager;
+import org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider;
+import org.eclipse.sirius.common.interpreter.api.IInterpreter;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+
+public class SampleLifecycleManagerProvider implements IEEFLifecycleManagerProvider {
+
+    private static final String DESCRIPTION_IDENTIFIER = "org.eclipse.eef.sample.customwidget";
+
+    @Override
+    public boolean canHandle(EEFControlDescription controlDescription) {
+        // Only handle the control with our description
+        return DESCRIPTION_IDENTIFIER.equals(controlDescription.getIdentifier());
+    }
+
+    @Override
+    public IEEFLifecycleManager getLifecycleManager(EEFControlDescription controlDescription, IVariableManager variableManager, IInterpreter interpreter, EditingContextAdapter contextAdapter) {
+        // Returns a lifecycle manager for the control supported
+        return new SampleLifecycleManager(controlDescription, variableManager, interpreter, contextAdapter);
+    }
+
+}
+</code></pre>
+		<p>This example requires at least the following dependencies:</p>
+		<ul>
+			<li>org.eclipse.sirius.common.interpreter</li>
+			<li>org.eclipse.eef</li>
+			<li>org.eclipse.eef.core</li>
+			<li>org.eclipse.eef.ide.ui</li>
+		</ul>
+		<h3 id="eeftabdescriptorprovider">IEEFTabDescriptorProvider</h3>
+		<p>This extension point allows the contribution of an 
+			<code>org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManagerProvider</code> which can be used to create an instance of 
+			<code>org.eclipse.eef.ide.ui.api.widgets.IEEFLifecycleManager</code> for the description of some controls. With this mechanism, you can not only provide the compulsory lifecycle manager of a custom widget but you can also replace the default lifecycle manager of any widget or container which gives you the ability to change the behavior and appearance of each part of the user interface (excluding groups and pages).
+		</p>
+		<pre><code>&lt;extension
+      point="org.eclipse.eef.properties.ui.eefTabDescriptorProvider"&gt;
+   &lt;descriptor
+         class="org.eclipse.eef.sample.internal.extensions.SampleTabDescriptorProvider"
+         description="Provides EEF Tab descriptors"
+         id="org.eclipse.eef.sample.eefTabDescriptorProvider"
+         label="EEF Sample Tab Descriptor Provider"&gt;
+   &lt;/descriptor&gt;
+&lt;/extension&gt;
+</code></pre>
+		<p>Example of IEEFTabDescriptorProvider contribution. In this example, we are providing a contribution used to add new tabs to the Properties view created by EEF. In order to link an editor with the EEF-based Properties view, you will first need to use the method org.eclipse.core.runtime.IAdaptable.getAdapter(Class) of your editor to return an EEF-based property sheet page.</p>
+		<pre><code>@Override
+public Object getAdapter(@SuppressWarnings("rawtypes") Class type) {
+    if (type == IPropertySheetPage.class) {
+        // Must be unique for your editor, should be stored in a static constant
+        String contributorId = "org.eclipse.eef.sample.contributorId";
+        return new EEFTabbedPropertySheetPage(type, contributorId);
+    }
+
+    return super.getAdapter(type);
+}
+</code></pre>
+		<p>Once the Eclipse platform has retrieved this EEF-based tabbed property sheet page, EEF will look for the list of tabs to display in this property view using all its IEEFTabDescriptorProvider. Here is an implementation of an example:</p>
+		<pre><code>package org.eclipse.eef.sample.internal.extensions;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import org.eclipse.eef.EEFViewDescription;
+import org.eclipse.eef.core.api.EEFExpressionUtils;
+import org.eclipse.eef.core.api.EEFPage;
+import org.eclipse.eef.core.api.EEFView;
+import org.eclipse.eef.core.api.EEFViewFactory;
+import org.eclipse.eef.core.api.EditingContextAdapter;
+import org.eclipse.eef.ide.ui.properties.api.EEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptor;
+import org.eclipse.eef.properties.ui.api.IEEFTabDescriptorProvider;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
+import org.eclipse.sirius.common.interpreter.api.IVariableManager;
+import org.eclipse.sirius.common.interpreter.api.VariableManagerFactory;
+import org.eclipse.ui.IWorkbenchPart;
+
+public class SampleTabDescriptorProvider implements IEEFTabDescriptorProvider {
+
+    @Override
+    public Collection&lt;IEEFTabDescriptor&gt; get(IWorkbenchPart part, ISelection selection) {
+        if (selection instanceof IStructuredSelection) {
+            IStructuredSelection structuredSelection = (IStructuredSelection) selection;
+            Object[] objects = structuredSelection.toArray();
+
+            // We will first retrieve the description of the user interface
+            EEFViewDescription viewDescription = this.getViewDescription(objects);
+            EEFView eefView = this.createEEFView(viewDescription, objects);
+
+            List&lt;IEEFTabDescriptor&gt; descriptors = new ArrayList&lt;IEEFTabDescriptor&gt;();
+            List&lt;EEFPage&gt; eefPages = eefView.getPages();
+            for (EEFPage eefPage : eefPages) {
+                descriptors.add(new EEFTabDescriptor(eefPage));
+            }
+            return descriptors;
+        }
+        return new ArrayList&lt;IEEFTabDescriptor&gt;();
+    }
+
+    private EEFViewDescription getViewDescription(Object object) {
+        // Programmatically create the description of the view or load it from an EMF model
+        return null;
+    }
+
+    private EEFView createEEFView(EEFViewDescription viewDescription, Object object) {
+        IVariableManager variableManager = new VariableManagerFactory().createVariableManager();
+        variableManager.put(EEFExpressionUtils.SELF, object);
+        
+        // See the documentation regarding the interpreter and the editing context adapter
+        EEFView eefView = new EEFViewFactory().createEEFView(viewDescription, variableManager, new SampleInterpreter(), new SampleEditingContextAdapter(), object);
+        return eefView;
+    }
+}
+</code></pre>
+		<p>This example requires at least the following dependencies:</p>
+		<ul>
+			<li>org.eclipse.sirius.common.interpreter</li>
+			<li>org.eclipse.eef</li>
+			<li>org.eclipse.eef.core</li>
+			<li>org.eclipse.eef.ide.ui.properties</li>
+			<li>org.eclipse.eef.properties.ui</li>
+			<li>org.eclipse.ui.workbench</li>
+			<li>org.eclipse.jface</li>
+		</ul>
+</md-content>

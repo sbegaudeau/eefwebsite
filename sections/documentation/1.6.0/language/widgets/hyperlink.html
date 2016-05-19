@@ -1,0 +1,29 @@
+<md-content layout="column" layout-align="center stretch" class="content">
+  <ul class="breadcrumb">
+    <li><a href="#/documentation/1.6.0">1.6.0</a> <span class="divider">/</span></li>
+    <li><a href="#/documentation/1.6.0/language/overview">Language</a> <span class="divider">/</span></li>
+    <li><a href="#/documentation/1.6.0/language/widgets">Widgets</a></li>
+  </ul>
+		<h2 id="Hyperlink">Hyperlink</h2>
+		<h3 id="description">Description</h3>
+		<p>The hyperlink widget can be used to display a read-only piece of text in your user interface and allow the user to click on it. Its behavior is almost the same as the 
+			<a href="#/documentation/1.6.0/language/widgets/label">label</a> or the 
+			<a href="#/documentation/1.6.0/language/widgets/text">text</a> widgets. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:
+		</p>
+		<ul>
+			<li>valueExpression: This expression is used in order to compute the text of the hyperlink. This expression must return a string.</li>
+			<li>onClickExpression: This expression will be executed once the end user will click on the hyperlink. This expression does not have to return anything.</li>
+			<li>style: The style of the hyperlink widget.</li>
+			<li>conditionalStyles: All the conditional styles of the hyperlink widget.</li>
+		</ul>
+		<h3 id="displayanaction">Display an action</h3>
+		<p>In order to create a hyperlink widget, you can use the following properties:</p>
+		<ul>
+			<li>valueExpression: 
+				<code>aql:'Click'</code>
+			</li>
+			<li>onClickExpression: 
+				<code>aql:self.doSomething()</code>
+			</li>
+		</ul>
+</md-content>

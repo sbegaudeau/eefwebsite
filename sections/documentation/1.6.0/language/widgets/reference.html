@@ -1,0 +1,43 @@
+<md-content layout="column" layout-align="center stretch" class="content">
+  <ul class="breadcrumb">
+    <li><a href="#/documentation/1.6.0">1.6.0</a> <span class="divider">/</span></li>
+    <li><a href="#/documentation/1.6.0/language/overview">Language</a> <span class="divider">/</span></li>
+    <li><a href="#/documentation/1.6.0/language/widgets">Widgets</a></li>
+  </ul>
+		<h2 id="Reference">Reference</h2>
+		<h3 id="description">Description</h3>
+		<p>The reference widget in EEF lets you display and edit a mono-valued or multi-valued EReference easily. On top of the common properties of all widgets (identifier, labelExpression, helpExpression, isEnabledExpression, propertyValidationRules), it has the following properties:</p>
+		<ul>
+			<li>multiple: Indicate if we should create a widget for the mono-valued use case or the multi-valued use case. While the description is the same, both widgets will have a very different implementation.</li>
+			<li>valueExpression: With the mono-valued version of this widget, the value will be used to compute a read-only label. With the multi-valued version, all the valued will be displayed in a table. This expression must return an object.</li>
+			<li>displayExpression: This expression is used to compute the read-only label of the mono-valued version and each label of the table in the multi-valued version. In both cases, each value will be available using the variable 
+				<code>value</code>. This expression must return a string.
+			</li>
+			<li>onClickExpression: This expression will be executed when the user will click on the value. With the multi-valued version of the widget, the user will be able to double click on a value. To determine whether the click on a single click or a double click, the kind of the click realized is available as a String in the variable 
+				<code>onClickEventKind</code> which can have the value 
+				<code>SINGLE_CLICK</code> or 
+				<code>DOUBLE_CLICK</code>. This expression does not have to return anything.
+			</li>
+			<li>actions: The actions are a list of buttons which will be available next to the widget to allow the user to trigger some actions for the reference. The specifier can use those actions in order to create a new instance of the value of the reference, to unset it, etc. An action has a labelExpression which must return a string used as the label of the button created for the action. An action also has an action expression used to execute some behavior when the end user will click on the button. The action expression does not have to return anything. The action expression will have access to the selected elements in a variable named 
+				<code>selection</code>.
+			</li>
+			<li>style: The style of the reference widget.</li>
+			<li>conditionalStyles: All the conditional styles of the reference widget.</li>
+		</ul>
+		<h3 id="displayereference">Display an EReference</h3>
+		<p>In order to display in the user interface a reference widget with the value of a multi-valued EReference, you can  create a reference widget with the following properties:</p>
+		<ul>
+			<li>multiple: 
+				<code>true</code>
+			</li>
+			<li>labelExpression: 
+				<code>aql:'Children'</code>
+			</li>
+			<li>valueExpression: 
+				<code>aql:self.children</code>
+			</li>
+			<li>displayExpression: 
+				<code>aql:value.name</code>
+			</li>
+		</ul>
+</md-content>
