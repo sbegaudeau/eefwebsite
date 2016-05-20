@@ -90,6 +90,11 @@ pre {
   word-break: break-all;
 }
 
+img.md-card-image {
+  border-bottom: 1px solid #303F9F;
+  border-top: 1px solid #303F9F;
+}
+
 .breadcrumb {
   padding: 7px 14px;
   margin: 0 0 18px;
